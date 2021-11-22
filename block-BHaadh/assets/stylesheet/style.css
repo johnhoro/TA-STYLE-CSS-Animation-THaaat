@@ -1,0 +1,300 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 6rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 2px solid black;
+}
+
+.spin {
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.spin:hover {
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+.cube {
+  position: relative;
+  width: 90px;
+}
+
+.side {
+  height: 90px;
+  position: absolute;
+  text-align: center;
+  line-height: 90px;
+  width: 90px;
+}
+
+.d-top {
+  background-color: rgba(154, 205, 50, 0.5);
+  -webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+          transform: rotate(-45deg) skew(15deg, 15deg);
+}
+
+.d-left {
+  background-color: rgba(255, 0, 0, 0.5);
+  -webkit-transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+          transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+}
+
+.d-right {
+  background-color: rgba(255, 105, 180, 0.5);
+  -webkit-transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+          transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+.cube-container {
+  height: 200px;
+  -webkit-perspective: 300;
+          perspective: 300;
+  position: relative;
+  width: 200px;
+}
+
+.cube-3d {
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translateZ(-100px);
+          transform: translateZ(-100px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  border: 1px solid yellowgreen;
+}
+
+.cube-3d:hover {
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  border: 4px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font: 1.5rem;
+}
+
+.front {
+  background: rgba(255, 0, 0, 0.5);
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+}
+
+.back {
+  background: rgba(255, 255, 0, 0.5);
+  -webkit-transform: rotateX(180deg) translateZ(100px);
+          transform: rotateX(180deg) translateZ(100px);
+}
+
+.right {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+          transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  background: rgba(218, 165, 32, 0.5);
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+          transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  background: rgba(255, 105, 180, 0.5);
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+          transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  background: rgba(0, 128, 0, 0.5);
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+          transform: rotateX(-90deg) translateZ(100px);
+}
+/*# sourceMappingURL=style.css.map */
